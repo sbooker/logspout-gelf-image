@@ -31,10 +31,9 @@ version: '3.4'
 
 services:
   logspout:
+    image: sergebooker/logspout-gelf:latest
     labels:
       - "logspout.exclude=true"
-    build:
-      context: .
     environment:
       COMPRESS_TYPE: "none"
       COMPRESS_LEVEL: "0"
