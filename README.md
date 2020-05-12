@@ -22,7 +22,7 @@ docker run -d --name=logspout --restart=unless-stopped -h $(hostname -f) \
     -e COMPRESS_TYPE=none \
     -e EXCLUDE_LABEL=logspout.exclude \
     sergebooker/logspout-gelf:latest \
-    gelf://host.docker.internal:4001
+    gelf://my.log.server:12201
 ```
 
 ### Docker Compose example
