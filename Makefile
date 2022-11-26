@@ -8,10 +8,18 @@ guard-%:
   		exit 1; \
   	fi
 
+up:
+	docker compose up --build
+
+stop:
+	docker compose stop
+
+restart: stop up
+
 all: build push
 
 build: guard-TAG guard-IMAGE
-	docker build -t ${IMAGE}:${TAG} .
+	docker build --no-cache -t ${IMAGE}:${TAG} .
 
 push: guard-TAG guard-IMAGE
 	docker push ${IMAGE}:${TAG}
